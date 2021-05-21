@@ -1,5 +1,5 @@
 import app from "./app";
 
-const port = 4516
-
-app.listen(port, ()=> console.log(`servidor rodando na porta ${port}`))
+app.listen(process.env.PORT, () => {
+  console.log("CORS-enabled web server listening on port " + process.env.PORT);
+});
