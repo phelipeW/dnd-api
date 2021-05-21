@@ -27,7 +27,7 @@ class PostController {
 
     const { secure_id, createdAt } = await Post.create({
       user_id: id,
-      postName,
+      name: postName,
       hitdice,
       file,
     });

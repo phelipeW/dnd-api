@@ -13,9 +13,14 @@ import FileController from "./app/controllers/FileController";
 import authMiddleware from "./app/middlewares/auth";
 import cacheConfig from "./config/redis";
 
+import cors from "cors";
+
 const cache = ExpressRedisCache(cacheConfig);
 
 const routes = Router();
+
+routes.options('*', cors())
+
 const upload = multer(multerConfig);
 
 routes.post("/users", UserController.store);
